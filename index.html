@@ -871,7 +871,9 @@ html.anim .reveal.in{opacity:1 !important;transform:none !important;}
     </aside>
 
     <div class="book-card reveal r-right" data-delay="1">
-      <form class="form-body" id="bookingForm" novalidate>
+      <form class="form-body" id="bookingForm" name="booking" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="booking" />
+        <p hidden><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
         <div class="form-row">
           <div class="field"><label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label><input class="input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required /><div class="form-error">Please pop your name in.</div></div>
           <div class="field"><label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label><input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" required /><div class="form-error">A mobile we can text you on.</div></div>
@@ -1170,8 +1172,23 @@ document.querySelectorAll(".app-card").forEach(card => {
     if(!ok){ if(firstBad){ firstBad.focus(); firstBad.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"center"}); } return; }
 
     const data = Object.fromEntries(new FormData(form).entries());
-    /* ---- hook a real backend / live calendar here:
-       fetch("/api/bookings",{method:"POST",body:JSON.stringify(data)}) ---- */
+    const btn = form.querySelector(".form-submit");
+
+    // Very old browsers without fetch: fall back to a normal Netlify POST.
+    if (!window.fetch){ form.submit(); return; }
+
+    const btnHTML = btn.innerHTML;
+    btn.disabled = true; btn.innerHTML = "Sending…";
+
+    // Send the booking to Netlify Forms (captures it + emails the client).
+    const body = new URLSearchParams();
+    new FormData(form).forEach((v,k)=>body.append(k,v));
+    fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:body.toString()})
+      .then((r)=>{ if(!r.ok) throw new Error(r.status); showConfirmation(data); })
+      .catch(()=>{ btn.disabled=false; btn.innerHTML=btnHTML; showSendError(btn); });
+  });
+
+  function showConfirmation(data){
     document.getElementById("c-name").textContent = (data.name||"there").split(" ")[0];
     const niceDate = data.date ? new Date(data.date+"T00:00").toLocaleDateString("en-AU",{weekday:"long",day:"numeric",month:"long"}) : "Flexible";
     document.getElementById("c-summary").innerHTML = `
@@ -1181,7 +1198,12 @@ document.querySelectorAll(".app-card").forEach(card => {
       <div><span>We'll text</span><span>${esc(data.phone||"—")}</span></div>`;
     card.classList.add("done");
     card.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"center"});
-  });
+  }
+  function showSendError(btn){
+    let n=document.getElementById("send-error");
+    if(!n){ n=document.createElement("p"); n.id="send-error"; n.setAttribute("role","alert"); n.style.cssText="margin-top:12px;color:#b3261e;font-weight:700;font-size:.9rem;text-align:center;"; btn.insertAdjacentElement("afterend", n); }
+    n.textContent = "Sorry — that didn't send. Please try again, or call us on "+CONFIG.phoneDisplay+".";
+  }
   function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 })();
 </script>

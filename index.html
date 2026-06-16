@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Enable scroll-in animations only when JS is running. If the reveal code
+     never initialises (older/embedded browsers), a failsafe un-hides
+     everything so content is NEVER stuck invisible. -->
+<script>
+  document.documentElement.className += " anim";
+  addEventListener("load", function(){
+    setTimeout(function(){
+      if (!window.__revealInit) document.documentElement.className =
+        document.documentElement.className.replace(/\banim\b/g, "");
+    }, 1800);
+  });
+</script>
+
+<!-- ============================================================= -->
+<!--  EASY TO REBRAND                                               -->
+<!--   • Name / phone / email / Airtasker link: edit the CONFIG     -->
+<!--     object in the <script> at the bottom (search "BUSINESS      -->
+<!--     CONFIG").                                                   -->
+<!--   • Photos: replace the files in /images (see images/README),  -->
+<!--     or edit the <img src="..."> directly in the HTML below.     -->
+<!-- ============================================================= -->
+
+<title>ProCare Appliance Services — Premium Appliance Repairs, Service, Cleaning & Installs · Melbourne</title>
+<meta name="description" content="Trusted local appliance repairs, servicing, deep cleaning and installation across inner-north & west Melbourne. Dishwashers, ovens, washing machines, dryers, fridges & rangehoods. 5.0 on Airtasker, fully insured." />
+<meta property="og:title" content="ProCare Appliance Services — Melbourne" />
+<meta property="og:description" content="One call for the whole house. Premium appliance repairs, servicing, deep cleaning & installs. 5.0 on Airtasker, fully insured." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&h=630&q=80" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ProCare Appliance Services — Melbourne" />
+<meta name="twitter:description" content="One call for the whole house. Appliance repairs, servicing, deep cleaning & installs. 5.0 on Airtasker, fully insured." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&h=630&q=80" />
+<meta name="theme-color" content="#0a4348" />
+
+<!-- favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* ===========================================================
+   DESIGN TOKENS
+   =========================================================== */
+:root{
+  --teal-950:#04211f;
+  --teal-900:#062e30;
+  --teal-800:#0a4348;
+  --teal-700:#0d5c63;
+  --teal-600:#12767f;
+  --teal-500:#1c919b;
+  --teal-400:#46b3bd;
+  --teal-100:#d7eef0;
+  --teal-50:#eef8f9;
+
+  --copper-700:#964617;
+  --copper-600:#b15a26;
+  --copper-500:#cf7232;
+  --amber-400:#e8a34a;
+  --amber-300:#f1bd76;
+  --amber-100:#fbe6cf;
+
+  --ink-950:#081413;
+  --ink-900:#10201f;
+  --ink-700:#2c3c3b;
+  --ink-500:#566463;
+  --ink-300:#8a9695;
+  --line:#e3ebea;
+  --paper:#ffffff;
+  --mist:#f5f9f8;
+  --mist-2:#eaf3f2;
+
+  --star:#f2a93b;
+  --ok-600:#1f8a5b;
+  --ok-bg:#e6f6ee;
+
+  --radius-xl:30px;
+  --radius-lg:22px;
+  --radius-md:16px;
+  --radius-sm:11px;
+
+  --shadow-sm:0 1px 2px rgba(6,46,48,.06), 0 2px 8px rgba(6,46,48,.05);
+  --shadow-md:0 8px 24px rgba(6,46,48,.10), 0 2px 8px rgba(6,46,48,.06);
+  --shadow-lg:0 24px 56px rgba(6,46,48,.16), 0 8px 18px rgba(6,46,48,.08);
+  --shadow-xl:0 40px 90px rgba(4,33,31,.28), 0 14px 30px rgba(4,33,31,.16);
+  --shadow-teal:0 16px 34px rgba(13,92,99,.30);
+
+  --maxw:1200px;
+  --gap:clamp(64px, 9vw, 140px);
+  --display:'Bricolage Grotesque', system-ui, sans-serif;
+  --font:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ease:cubic-bezier(.22,.61,.18,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+@supports (scroll-behavior:smooth){ html{scroll-behavior:smooth;} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+
+body{
+  margin:0;font-family:var(--font);color:var(--ink-700);background:var(--paper);
+  line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink-900);line-height:1.04;margin:0 0 .4em;letter-spacing:-0.02em;font-weight:700;}
+h1{font-weight:800;}
+h2{font-size:clamp(2rem,4.4vw,3.3rem);}
+h3{font-size:1.28rem;letter-spacing:-.01em;}
+p{margin:0 0 1rem;}
+a{color:var(--teal-700);text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(18px,5vw,40px);}
+section{padding-block:var(--gap);position:relative;}
+
+.eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.8rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--teal-600);margin-bottom:.85rem;}
+.eyebrow::before{content:"";width:30px;height:2px;border-radius:2px;background:var(--copper-500);}
+.lead{font-size:1.14rem;color:var(--ink-500);max-width:60ch;}
+.section-head{max-width:64ch;margin-bottom:clamp(36px,5vw,60px);}
+.center{text-align:center;margin-inline:auto;}
+.center .eyebrow{justify-content:center;}
+.center .eyebrow::before{display:none;}
+.dark-eyebrow{color:var(--amber-300);}
+
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid var(--amber-400);outline-offset:3px;border-radius:8px;}
+
+.skip-link{position:absolute;left:14px;top:-60px;z-index:300;background:var(--teal-700);color:#fff;padding:.7em 1.1em;border-radius:10px;font-weight:700;transition:top .2s ease;}
+.skip-link:focus{top:14px;}
+
+/* ===========================================================
+   BUTTONS
+   =========================================================== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:700;font-size:1rem;line-height:1;padding:1em 1.6em;border-radius:999px;border:0;position:relative;overflow:hidden;transition:transform .2s var(--ease), box-shadow .25s var(--ease), background .2s;text-align:center;white-space:nowrap;}
+.btn svg{width:1.05em;height:1.05em;}
+.btn-primary{background:var(--copper-500);color:#fff;box-shadow:0 10px 24px rgba(207,114,50,.34);}
+.btn-primary:hover{background:var(--copper-600);transform:translateY(-3px);box-shadow:0 16px 32px rgba(207,114,50,.42);}
+.btn-teal{background:var(--teal-700);color:#fff;box-shadow:var(--shadow-teal);}
+.btn-teal:hover{background:var(--teal-800);transform:translateY(-3px);}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(6px);}
+.btn-ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-3px);}
+.btn-light{background:#fff;color:var(--teal-800);box-shadow:var(--shadow-sm);border:1.5px solid var(--line);}
+.btn-light:hover{border-color:var(--teal-500);color:var(--teal-700);transform:translateY(-3px);}
+.btn-lg{padding:1.15em 2em;font-size:1.06rem;}
+.btn-block{width:100%;}
+.btn .shine{position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.35) 50%,transparent 75%);transform:translateX(-120%);transition:transform .7s var(--ease);pointer-events:none;}
+.btn:hover .shine{transform:translateX(120%);}
+@media (prefers-reduced-motion:reduce){ .btn:hover{transform:none;} .btn .shine{display:none;} }
+
+/* ===========================================================
+   PHOTO COMPONENT (graceful fallback)
+   =========================================================== */
+.ph{position:relative;overflow:hidden;background:linear-gradient(150deg,var(--teal-700),var(--teal-900));}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;}
+.ph .ph-ico{position:absolute;inset:0;display:none;place-items:center;color:rgba(255,255,255,.22);}
+.ph .ph-ico svg{width:34%;max-width:120px;height:auto;}
+.ph.ph-fail img{visibility:hidden;}
+.ph.ph-fail{background:linear-gradient(150deg,var(--teal-600),var(--teal-900));}
+.ph.ph-fail .ph-ico{display:grid;}
+.ph.ph-fail::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 80% 10%, rgba(232,163,74,.22), transparent 55%);}
+
+/* zoom-on-scroll wrapper */
+.zoomwrap{overflow:hidden;}
+.zoomwrap img,.zoomwrap .ph{will-change:transform;}
+
+/* ===========================================================
+   NAV
+   =========================================================== */
+.topbar{background:var(--teal-950);color:#bfe0e2;font-size:.82rem;font-weight:500;}
+.topbar .wrap{display:flex;gap:18px;align-items:center;justify-content:center;height:38px;text-align:center;}
+.topbar svg{width:1em;height:1em;color:var(--amber-400);vertical-align:-2px;margin-right:.3em;}
+.topbar b{color:#fff;font-weight:700;}
+@media (max-width:620px){ .topbar .wrap span.hide-sm{display:none;} }
+
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.78);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid transparent;transition:box-shadow .3s var(--ease), border-color .3s, background .3s, transform .35s var(--ease);}
+.nav.scrolled{box-shadow:var(--shadow-sm);border-color:var(--line);background:rgba(255,255,255,.92);}
+.nav.hide{transform:translateY(-100%);}
+.nav .wrap{max-width:1320px;}
+.nav-inner{display:flex;align-items:center;gap:clamp(8px,1vw,16px);height:74px;flex-wrap:nowrap;}
+.brand{display:flex;align-items:center;gap:.6em;flex:none;font-family:var(--display);font-weight:800;color:var(--ink-900);font-size:clamp(1rem,1.2vw,1.12rem);letter-spacing:-.02em;white-space:nowrap;line-height:1.12;}
+.brand .mark{flex:none;width:40px;height:40px;border-radius:12px;background:linear-gradient(150deg,var(--teal-500),var(--teal-800));display:grid;place-items:center;box-shadow:var(--shadow-teal);}
+.brand .mark svg{width:22px;height:22px;color:#fff;}
+.brand small{display:block;font-family:var(--font);font-size:.64rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--teal-600);margin-top:2px;}
+.nav-spacer{flex:1 1 auto;min-width:8px;}
+.nav-links{display:flex;align-items:center;gap:1px;flex:none;}
+.nav-links a.navlink{padding:.5em .56em;border-radius:9px;color:var(--ink-700);font-weight:600;font-size:.92rem;white-space:nowrap;transition:background .15s,color .15s;}
+.nav-links a.navlink:hover{background:var(--teal-50);color:var(--teal-700);}
+.nav-phone{display:inline-flex;align-items:center;gap:.45em;flex:none;font-weight:700;color:var(--teal-800);padding:.5em .65em;border-radius:9px;white-space:nowrap;}
+.nav-phone:hover{background:var(--teal-50);}
+.nav-phone svg{width:1.05em;height:1.05em;color:var(--copper-500);flex:none;}
+.nav-cta{flex:none;}
+@media (max-width:1220px){ .nav-links .navlink{display:none;} }
+@media (max-width:760px){ .nav-phone span.lbl{display:none;} }
+@media (max-width:480px){ .nav-cta .full{display:none;} .brand small{display:none;} }
+
+/* ===========================================================
+   HERO  (cinematic, full-bleed photo)
+   =========================================================== */
+.hero{min-height:clamp(620px,94vh,940px);display:flex;align-items:center;color:#fff;overflow:hidden;padding-block:clamp(60px,8vw,90px);}
+.hero-bg{position:absolute;inset:-8% 0 0 0;height:116%;z-index:-2;}
+.hero-bg .ph{width:100%;height:100%;}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg, rgba(4,33,31,.92) 0%, rgba(6,46,48,.78) 40%, rgba(6,46,48,.42) 70%, rgba(6,46,48,.30) 100%), linear-gradient(0deg, rgba(4,33,31,.7), transparent 45%);}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(32px,5vw,70px);align-items:center;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:.6em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);padding:.5em .95em;border-radius:999px;font-size:.84rem;font-weight:600;margin-bottom:1.2rem;}
+.hero-badge .stars{color:var(--star);letter-spacing:1px;}
+.hero h1{font-size:clamp(2.5rem,6vw,4.6rem);color:#fff;line-height:.98;letter-spacing:-.03em;}
+.hero h1 .hl{color:var(--amber-300);font-style:italic;}
+.hero-sub{font-size:clamp(1.06rem,1.6vw,1.24rem);color:#d6e9ea;max-width:46ch;margin-top:.5rem;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:1.8rem;}
+.hero-assure{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:1.7rem;color:#cfe6e7;font-size:.95rem;font-weight:600;}
+.hero-assure span{display:inline-flex;align-items:center;gap:.5em;}
+.hero-assure svg{width:1.1em;height:1.1em;color:var(--amber-300);flex:none;}
+
+/* signature glass picker */
+.picker{background:rgba(255,255,255,.96);color:var(--ink-700);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:clamp(22px,2.6vw,30px);position:relative;border:1px solid rgba(255,255,255,.6);}
+.picker-q{font-family:var(--display);font-weight:800;color:var(--ink-900);font-size:1.32rem;margin-bottom:.1rem;letter-spacing:-.02em;}
+.picker-hint{font-size:.92rem;color:var(--ink-500);margin-bottom:1.2rem;}
+.appliance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.app-card{appearance:none;background:var(--mist);border:1.5px solid var(--line);border-radius:var(--radius-md);padding:16px 10px 14px;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;color:var(--ink-700);font-weight:700;font-size:.9rem;line-height:1.15;transition:transform .18s var(--ease),box-shadow .2s,border-color .2s,background .2s;}
+.app-card .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;flex:none;background:var(--teal-50);color:var(--teal-700);transition:background .2s,color .2s,transform .25s var(--ease);}
+.app-card .ico svg{width:26px;height:26px;}
+.app-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--teal-500);background:#fff;}
+.app-card:hover .ico{background:var(--teal-700);color:#fff;transform:scale(1.08) rotate(-3deg);}
+.app-card.is-pulse{animation:cardpulse 1.3s var(--ease);}
+@keyframes cardpulse{0%,100%{box-shadow:var(--shadow-md);}40%{box-shadow:0 0 0 5px var(--amber-100);transform:translateY(-4px) scale(1.02);}}
+.picker-foot{display:flex;align-items:center;gap:.55em;margin-top:15px;font-size:.86rem;color:var(--ink-500);}
+.picker-foot svg{width:1.05em;height:1.05em;color:var(--copper-500);flex:none;}
+.scroll-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.7);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;z-index:2;}
+.scroll-cue .mouse{width:22px;height:34px;border:2px solid rgba(255,255,255,.55);border-radius:12px;position:relative;}
+.scroll-cue .mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;border-radius:3px;background:#fff;transform:translateX(-50%);animation:wheel 1.6s var(--ease) infinite;}
+@keyframes wheel{0%{opacity:0;transform:translate(-50%,0);}40%{opacity:1;}80%{opacity:0;transform:translate(-50%,10px);}}
+
+@media (prefers-reduced-motion:reduce){
+  .app-card:hover,.app-card:hover .ico{transform:none;}
+  .app-card.is-pulse{animation:none;}
+  .scroll-cue .mouse::after{animation:none;}
+}
+@media (max-width:980px){ .hero-grid{grid-template-columns:1fr;} .hero-copy{max-width:680px;} .scroll-cue{display:none;} }
+@media (max-width:430px){ .appliance-grid{grid-template-columns:repeat(2,1fr);} }
+
+/* ===========================================================
+   MARQUEE TRUST STRIP
+   =========================================================== */
+.marquee{background:var(--teal-900);color:#fff;padding-block:20px;overflow:hidden;border-block:1px solid rgba(255,255,255,.06);}
+.marquee-track{display:flex;gap:0;width:max-content;animation:scrollx 32s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee-item{display:inline-flex;align-items:center;gap:.6em;padding-inline:38px;font-weight:600;font-size:1rem;color:#dbeff0;white-space:nowrap;}
+.marquee-item svg{width:1.2em;height:1.2em;color:var(--amber-400);}
+.marquee-item .sep{color:var(--teal-500);}
+@keyframes scrollx{to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion:reduce){ .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;} }
+
+/* ===========================================================
+   STATS
+   =========================================================== */
+.stats{background:var(--paper);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.stat{text-align:center;padding:30px 18px;border-radius:var(--radius-lg);background:linear-gradient(180deg,var(--mist),#fff);border:1px solid var(--line);box-shadow:var(--shadow-sm);}
+.stat .big{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,4vw,3rem);color:var(--teal-700);line-height:1;letter-spacing:-.03em;}
+.stat .big .suffix{color:var(--copper-500);}
+.stat .lbl{margin-top:.5rem;color:var(--ink-500);font-weight:600;font-size:.95rem;}
+.stat .stars{color:var(--star);letter-spacing:2px;font-size:.95rem;}
+@media (max-width:720px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
+
+/* ===========================================================
+   SERVICES
+   =========================================================== */
+.services{background:linear-gradient(180deg,#fff,var(--mist));}
+.svc-banner{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px 14px;justify-content:center;background:var(--teal-50);border:1px solid var(--teal-100);border-radius:999px;padding:.7em 1.3em;margin-bottom:1rem;font-weight:700;color:var(--teal-800);font-size:.96rem;}
+.svc-banner svg{width:1.2em;height:1.2em;color:var(--copper-500);}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.svc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s var(--ease),box-shadow .3s,border-color .2s;display:flex;flex-direction:column;transform-style:preserve-3d;}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--teal-100);}
+.svc-media{aspect-ratio:4/3;position:relative;}
+.svc-media .ph{width:100%;height:100%;}
+.svc-media img{transition:transform .6s var(--ease);}
+.svc-card:hover .svc-media img{transform:scale(1.08);}
+.svc-media .svc-ico{position:absolute;left:16px;bottom:-22px;width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#fff;color:var(--teal-700);box-shadow:var(--shadow-md);border:1px solid var(--line);}
+.svc-media .svc-ico svg{width:27px;height:27px;}
+.svc-body{padding:32px 22px 24px;display:flex;flex-direction:column;flex:1;}
+.svc-body h3{margin-bottom:.35em;}
+.svc-body p{font-size:.96rem;color:var(--ink-500);margin-bottom:1rem;}
+.svc-body .tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;}
+.svc-body .tags span{font-size:.76rem;font-weight:600;color:var(--teal-700);background:var(--teal-50);padding:.32em .7em;border-radius:999px;}
+.svc-foot{text-align:center;margin-top:clamp(36px,5vw,52px);}
+.svc-foot p{margin-bottom:1.1rem;}
+@media (max-width:1000px){ .svc-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:540px){ .svc-grid{grid-template-columns:1fr;} }
+
+/* ===========================================================
+   BRANDS WE REPAIR
+   =========================================================== */
+.brands{background:var(--mist);}
+.brand-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+.brand-chip{display:grid;place-items:center;text-align:center;min-height:84px;padding:18px 12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);font-family:var(--display);font-weight:700;font-size:clamp(.92rem,1.4vw,1.08rem);letter-spacing:.01em;color:var(--ink-500);line-height:1.15;transition:transform .22s var(--ease),box-shadow .25s,color .2s,border-color .2s;}
+.brand-chip:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);color:var(--teal-700);border-color:var(--teal-100);}
+.brand-chip.more{background:var(--teal-50);border-color:var(--teal-100);color:var(--teal-700);}
+.brand-note{display:flex;align-items:center;justify-content:center;gap:.55em;margin-top:24px;font-size:.96rem;color:var(--ink-500);text-align:center;}
+.brand-note svg{width:1.1em;height:1.1em;color:var(--copper-500);flex:none;}
+.brand-note a{font-weight:700;}
+@media (max-width:900px){ .brand-grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:440px){ .brand-grid{grid-template-columns:repeat(2,1fr);} }
+
+/* ===========================================================
+   WHOLE-HOUSE FEATURE (image + sticky text, scroll zoom)
+   =========================================================== */
+.feature{background:var(--paper);overflow:clip;}
+.feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,72px);align-items:center;}
+.feature-media{position:relative;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-xl);aspect-ratio:5/6;}
+.feature-media .ph{width:100%;height:100%;}
+.feature-float{position:absolute;left:-8px;bottom:24px;background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:16px 20px;display:flex;align-items:center;gap:14px;max-width:88%;border:1px solid var(--line);}
+.feature-float .fico{width:46px;height:46px;border-radius:13px;background:var(--ok-bg);color:var(--ok-600);display:grid;place-items:center;flex:none;}
+.feature-float .fico svg{width:24px;height:24px;}
+.feature-float strong{display:block;color:var(--ink-900);font-family:var(--display);font-weight:700;}
+.feature-float span{font-size:.86rem;color:var(--ink-500);}
+.feature-list{display:grid;gap:16px;margin-top:1.4rem;}
+.feature-list li{display:flex;gap:13px;align-items:flex-start;}
+.feature-list .ci{width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;background:var(--teal-50);color:var(--teal-700);margin-top:2px;}
+.feature-list .ci svg{width:17px;height:17px;}
+.feature-list h4{margin:0 0 .1em;font-size:1.04rem;font-family:var(--display);}
+.feature-list p{margin:0;font-size:.95rem;color:var(--ink-500);}
+@media (max-width:920px){ .feature-grid{grid-template-columns:1fr;} .feature-media{aspect-ratio:4/3;max-width:560px;} }
+
+/* ===========================================================
+   HOW IT WORKS
+   =========================================================== */
+.how{background:linear-gradient(180deg,var(--mist),var(--mist-2));overflow:clip;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;}
+.steps::before{content:"";position:absolute;top:54px;left:14%;right:14%;height:2px;background:repeating-linear-gradient(90deg,var(--teal-100) 0 10px,transparent 10px 20px);z-index:0;}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:34px 28px;box-shadow:var(--shadow-sm);position:relative;z-index:1;transition:transform .25s var(--ease),box-shadow .3s;}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+.step .n{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.25rem;color:#fff;background:linear-gradient(150deg,var(--teal-500),var(--teal-800));box-shadow:var(--shadow-teal);margin-bottom:18px;}
+.step h3{margin-bottom:.3em;}
+.step p{font-size:.97rem;color:var(--ink-500);margin:0;}
+@media (max-width:860px){ .steps{grid-template-columns:1fr;gap:16px;} .steps::before{display:none;} }
+
+/* ===========================================================
+   PROJECTS GALLERY
+   =========================================================== */
+.projects{background:var(--paper);overflow:clip;}
+.proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.proj{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow-sm);}
+.proj .ph{width:100%;height:100%;}
+.proj img{transition:transform .7s var(--ease);}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,33,31,.78),transparent 55%);opacity:.9;transition:opacity .3s;}
+.proj:hover img{transform:scale(1.1);}
+.proj .cap{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;color:#fff;transform:translateY(6px);transition:transform .3s var(--ease);}
+.proj:hover .cap{transform:translateY(0);}
+.proj .cap .tag{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-300);}
+.proj .cap .ttl{font-family:var(--display);font-weight:700;font-size:1.02rem;line-height:1.2;}
+@media (max-width:900px){ .proj-grid{grid-template-columns:repeat(2,1fr);} }
+
+/* ===========================================================
+   REVIEWS
+   =========================================================== */
+.reviews{background:linear-gradient(180deg,#fff,var(--mist));}
+.airt-badge{display:inline-flex;align-items:center;gap:.7em;background:var(--teal-800);color:#fff;padding:.65em 1.2em;border-radius:999px;font-weight:700;font-size:.92rem;box-shadow:var(--shadow-md);transition:transform .2s var(--ease),box-shadow .25s;}
+.airt-badge:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);color:#fff;}
+.airt-badge .dot{width:24px;height:24px;border-radius:7px;background:#15b3a6;display:grid;place-items:center;font-size:.72rem;font-weight:800;color:#04302c;flex:none;}
+.airt-badge .stars{color:var(--star);letter-spacing:1px;}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(32px,4vw,46px);}
+.rev-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 26px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .3s;position:relative;}
+.rev-card::before{content:"“";position:absolute;right:22px;top:6px;font-family:var(--display);font-size:5rem;line-height:1;color:var(--teal-50);}
+.rev-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.rev-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;position:relative;}
+.rev-av{width:48px;height:48px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--display);font-weight:800;color:#fff;font-size:1.05rem;}
+.rev-name{font-family:var(--display);font-weight:700;color:var(--ink-900);line-height:1.2;}
+.rev-meta{font-size:.82rem;color:var(--ink-300);}
+.rev-stars{color:var(--star);letter-spacing:2px;font-size:.98rem;margin-bottom:.5rem;}
+.rev-job{display:inline-block;font-size:.76rem;font-weight:700;color:var(--copper-600);background:var(--amber-100);padding:.28em .7em;border-radius:999px;margin-bottom:.85rem;align-self:flex-start;}
+.rev-quote{font-size:1rem;color:var(--ink-700);margin:0;position:relative;}
+.rev-verified{display:flex;align-items:center;gap:.4em;margin-top:16px;font-size:.8rem;color:var(--ok-600);font-weight:700;}
+.rev-verified svg{width:1em;height:1em;}
+@media (max-width:900px){ .rev-grid{grid-template-columns:1fr;} }
+
+/* ===========================================================
+   SERVICE AREA (dark, atmospheric)
+   =========================================================== */
+.area{background:linear-gradient(155deg,var(--teal-800),var(--teal-950));color:#fff;overflow:clip;}
+.area::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 50% at 85% 0%, rgba(232,163,74,.16), transparent 60%);pointer-events:none;}
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,70px);align-items:center;position:relative;}
+.area h2{color:#fff;}
+.area .lead{color:#c4e3e5;}
+.suburb-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+.suburb-list li{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:.55em 1em;border-radius:999px;font-size:.92rem;font-weight:600;color:#eafafb;transition:background .2s,transform .2s var(--ease),border-color .2s;}
+.suburb-list li:hover{background:rgba(232,163,74,.16);border-color:rgba(232,163,74,.4);transform:translateY(-2px);}
+.area-note{display:flex;gap:14px;align-items:flex-start;margin-top:26px;background:rgba(232,163,74,.13);border:1px solid rgba(232,163,74,.3);border-radius:var(--radius-md);padding:18px 20px;}
+.area-note svg{width:1.5em;height:1.5em;color:var(--amber-400);flex:none;margin-top:1px;}
+.area-note p{margin:0;color:#d8eeef;font-size:.96rem;}
+.area-note strong{color:#fff;}
+.area-note a{color:var(--amber-300);font-weight:700;text-decoration:underline;}
+@media (max-width:860px){ .area-grid{grid-template-columns:1fr;} }
+
+/* ===========================================================
+   BOOKING
+   =========================================================== */
+.book{background:var(--mist);overflow:clip;}
+.book-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(30px,5vw,60px);align-items:stretch;}
+.book-aside{position:relative;isolation:isolate;border-radius:var(--radius-xl);overflow:hidden;color:#fff;padding:clamp(30px,4vw,46px);display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow-lg);min-height:100%;}
+.book-aside .ph{position:absolute;inset:0;z-index:0;}
+.book-aside::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(6,46,48,.95),rgba(4,33,31,.86));}
+.book-aside > :not(.ph){position:relative;z-index:2;}
+.book-aside h2{color:#fff;}
+.book-aside .lead{color:#cfe6e7;margin-bottom:1.5rem;}
+.book-points{display:grid;gap:16px;margin-top:6px;}
+.book-point{display:flex;gap:13px;align-items:flex-start;}
+.book-point .bp-ico{width:42px;height:42px;border-radius:12px;flex:none;display:grid;place-items:center;background:rgba(255,255,255,.1);color:var(--amber-300);}
+.book-point .bp-ico svg{width:21px;height:21px;}
+.book-point h4{margin:0 0 .1em;font-size:1.04rem;font-family:var(--display);color:#fff;}
+.book-point p{margin:0;font-size:.92rem;color:#bfdedf;}
+
+.book-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:clamp(24px,3vw,38px);position:relative;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.field{margin-bottom:16px;}
+.field.full{grid-column:1/-1;}
+label{display:block;font-weight:700;font-size:.9rem;color:var(--ink-900);margin-bottom:.4em;}
+label .req{color:var(--copper-500);}
+.input,select.input,textarea.input{width:100%;font-family:inherit;font-size:1rem;color:var(--ink-900);padding:.85em 1em;border:1.5px solid var(--line);border-radius:var(--radius-sm);background:var(--mist);transition:border-color .15s,box-shadow .15s,background .15s;}
+.input::placeholder{color:var(--ink-300);}
+.input:hover{border-color:var(--teal-100);}
+.input:focus{outline:none;border-color:var(--teal-500);background:#fff;box-shadow:0 0 0 3px var(--teal-50);}
+textarea.input{resize:vertical;min-height:108px;}
+select.input{appearance:none;padding-right:2.6em;cursor:pointer;}
+.select-wrap{position:relative;}
+.select-wrap::after{content:"";position:absolute;right:16px;top:50%;width:9px;height:9px;border-right:2px solid var(--ink-500);border-bottom:2px solid var(--ink-500);transform:translateY(-70%) rotate(45deg);pointer-events:none;}
+.timechoice{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.timechoice input{position:absolute;opacity:0;pointer-events:none;}
+.timechoice label{display:flex;align-items:center;gap:.6em;justify-content:center;margin:0;cursor:pointer;padding:.9em 1em;border:1.5px solid var(--line);border-radius:var(--radius-sm);background:var(--mist);font-weight:600;color:var(--ink-700);transition:all .15s;font-size:.96rem;}
+.timechoice label svg{width:1.2em;height:1.2em;color:var(--ink-300);transition:color .15s;}
+.timechoice label:hover{border-color:var(--teal-500);}
+.timechoice input:checked + label{border-color:var(--teal-600);background:var(--teal-50);color:var(--teal-800);box-shadow:0 0 0 3px var(--teal-50);}
+.timechoice input:checked + label svg{color:var(--teal-600);}
+.timechoice input:focus-visible + label{outline:3px solid var(--amber-400);outline-offset:2px;}
+.form-error{color:#b3261e;font-size:.82rem;margin-top:.35em;font-weight:600;display:none;}
+.field.invalid .input{border-color:#e0827b;background:#fdf3f2;}
+.field.invalid .form-error{display:block;}
+.form-submit{margin-top:6px;}
+.form-reassure{display:flex;align-items:center;gap:.55em;justify-content:center;margin-top:14px;font-size:.86rem;color:var(--ink-500);}
+.form-reassure svg{width:1.05em;height:1.05em;color:var(--ok-600);flex:none;}
+.confirm{display:none;text-align:center;padding:20px 6px 8px;}
+.book-card.done .form-body{display:none;}
+.book-card.done .confirm{display:block;animation:rise .6s var(--ease);}
+.confirm .check{width:80px;height:80px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:var(--ok-bg);color:var(--ok-600);position:relative;}
+.confirm .check svg{width:40px;height:40px;}
+.confirm .check::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--ok-600);opacity:.25;animation:ring 1.6s var(--ease) infinite;}
+@keyframes ring{0%{transform:scale(.85);opacity:.4;}100%{transform:scale(1.25);opacity:0;}}
+.confirm h3{font-size:1.6rem;}
+.confirm p{color:var(--ink-500);max-width:42ch;margin-inline:auto;}
+.confirm .summary{text-align:left;background:var(--mist);border:1px solid var(--line);border-radius:var(--radius-md);padding:16px 18px;margin:20px auto 0;max-width:420px;font-size:.93rem;}
+.confirm .summary div{display:flex;justify-content:space-between;gap:14px;padding:.32em 0;border-bottom:1px dashed var(--line);}
+.confirm .summary div:last-child{border-bottom:0;}
+.confirm .summary span:first-child{color:var(--ink-500);}
+.confirm .summary span:last-child{font-weight:700;color:var(--ink-900);text-align:right;}
+@keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.cal-note{margin-top:18px;font-size:.78rem;color:var(--ink-300);text-align:center;}
+@media (max-width:880px){ .book-grid{grid-template-columns:1fr;} .book-aside{min-height:auto;} }
+@media (max-width:480px){ .form-row{grid-template-columns:1fr;} }
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+.footer{background:var(--teal-950);color:#bfe0e2;padding-block:clamp(48px,6vw,72px) 26px;}
+.footer a{color:#dff2f3;}
+.footer a:hover{color:#fff;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px;}
+.foot-brand .brand{color:#fff;font-size:1.24rem;}
+.foot-brand .brand small{color:var(--amber-300);}
+.foot-brand p{color:#a9cfd1;font-size:.95rem;max-width:34ch;margin-top:.9rem;}
+.foot-col h4{color:#fff;font-family:var(--display);font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem;}
+.foot-col ul{display:grid;gap:.65em;}
+.foot-col li{display:flex;align-items:center;gap:.6em;font-size:.95rem;min-width:0;}
+.foot-col li svg{width:1.05em;height:1.05em;color:var(--amber-300);flex:none;}
+.foot-col li a,.foot-brand p{overflow-wrap:anywhere;word-break:break-word;min-width:0;}
+.foot-badge{display:inline-flex;align-items:center;gap:.5em;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:.5em .9em;border-radius:999px;font-size:.84rem;font-weight:600;color:#eafafb;margin-top:16px;}
+.foot-badge svg{width:1.1em;height:1.1em;color:var(--ok-bg);}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:38px;padding-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;font-size:.84rem;color:#8fb6b8;}
+@media (max-width:880px){ .foot-grid{grid-template-columns:1fr 1fr;gap:30px 28px;} }
+@media (max-width:560px){ .foot-grid{grid-template-columns:1fr;gap:30px;} }
+
+/* ===========================================================
+   SCROLL REVEAL (re-triggers both directions) + utilities
+   =========================================================== */
+.reveal{transition:opacity .8s var(--ease),transform .8s var(--ease);}
+html.anim .reveal{opacity:0;transform:translateY(34px);}
+html.anim .reveal.r-left{transform:translateX(-44px);}
+html.anim .reveal.r-right{transform:translateX(44px);}
+html.anim .reveal.r-scale{transform:scale(.92);}
+html.anim .reveal.in{opacity:1 !important;transform:none !important;}
+.reveal[data-delay="1"]{transition-delay:.09s;}
+.reveal[data-delay="2"]{transition-delay:.18s;}
+.reveal[data-delay="3"]{transition-delay:.27s;}
+.reveal[data-delay="4"]{transition-delay:.36s;}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+  .zoomwrap img,.zoomwrap .ph,[data-parallax]{transform:none !important;}
+}
+
+/* back-to-top band + floating button */
+.totop-band{background:var(--mist);border-top:1px solid var(--line);text-align:center;padding-block:clamp(30px,4vw,46px);}
+.totop{gap:.55em;}
+.totop svg{transition:transform .2s var(--ease);}
+.totop:hover svg{transform:translateY(-3px);}
+.totop-fab{position:fixed;right:22px;bottom:24px;z-index:140;width:52px;height:52px;border-radius:50%;background:var(--teal-700);color:#fff;border:0;display:grid;place-items:center;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .3s,transform .3s var(--ease),background .2s;}
+.totop-fab.show{opacity:1;visibility:visible;transform:none;}
+.totop-fab:hover{background:var(--teal-800);transform:translateY(-3px);}
+.totop-fab svg{width:22px;height:22px;}
+@media (max-width:680px){ .totop-fab{display:none;} }
+@media (prefers-reduced-motion:reduce){ .totop:hover svg,.totop-fab:hover{transform:none;} }
+
+/* mobile sticky bar */
+.mobilebar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(6,46,48,.1);}
+.mobilebar .btn{flex:1;}
+.mobilebar .call{flex:none;width:54px;padding:0;}
+@media (max-width:680px){ .mobilebar{display:flex;} body{padding-bottom:76px;} }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#booking">Skip to booking</a>
+
+<!-- top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01z"/></svg><b>5.0 on Airtasker</b> · 200+ local jobs</span>
+    <span class="hide-sm">·</span>
+    <span class="hide-sm">Fully insured &amp; guaranteed · Same-week service</span>
+  </div>
+</div>
+
+<!-- =================== NAV =================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="ProCare Appliance Services home">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+      <span><span data-biz-name>ProCare Appliance Services</span><small>Melbourne · Repairs &amp; Service</small></span>
+    </a>
+    <span class="nav-spacer"></span>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#brands">Brands</a>
+      <a class="navlink" href="#how">How it works</a>
+      <a class="navlink" href="#projects">Our work</a>
+      <a class="navlink" href="#reviews">Reviews</a>
+      <a class="navlink" href="#area">Areas</a>
+    </nav>
+    <a class="nav-phone" data-tel href="tel:+61400000000">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="lbl" data-tel-display>0400 000 000</span>
+    </a>
+    <a class="btn btn-primary nav-cta" href="#booking"><span class="shine"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+      <span class="full">Book a service</span><span class="full" style="display:none"></span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- =================== HERO =================== -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero-bg zoomwrap" data-parallax="0.18" aria-hidden="true">
+    <div class="ph" data-ph="hero">
+      <img alt="" src="images/hero.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" />
+      <span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16"/><circle cx="8" cy="6" r=".7"/><circle cx="12" cy="6" r=".7"/><rect x="8" y="12" width="8" height="6" rx="1"/></svg></span>
+    </div>
+  </div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="hero-badge"><span class="stars" aria-hidden="true">★★★★★</span> Rated 5.0 by 200+ Melbourne homes</span>
+      <h1 id="hero-h">We bring <span class="hl">broken things</span> back to life.</h1>
+      <p class="hero-sub">Honest, tidy, fully-insured appliance repairs, servicing, deep-cleans and installs across Melbourne's inner north &amp; west — one trusted local for the whole kitchen and laundry.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#booking"><span class="shine"></span>Book a service</a>
+        <a class="btn btn-ghost btn-lg" data-tel href="tel:+61400000000">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call now
+        </a>
+      </div>
+      <div class="hero-assure">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Upfront pricing</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Insured &amp; guaranteed</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Same-week response</span>
+      </div>
+    </div>
+
+    <!-- SIGNATURE PICKER -->
+    <div class="picker reveal r-right" data-delay="1" aria-labelledby="picker-q">
+      <div class="picker-q" id="picker-q">What needs a look?</div>
+      <p class="picker-hint">Tap an appliance — we'll start your booking and fill in the rest.</p>
+      <div class="appliance-grid" role="group" aria-label="Choose an appliance to start booking">
+        <button type="button" class="app-card" data-appliance="Dishwasher">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16"/><path d="M8 5.5h.01M11 5.5h3"/><path d="M9 12c1 1.2 1 2.3 0 3.5M12 12c1 1.2 1 2.3 0 3.5M15 12c1 1.2 1 2.3 0 3.5"/></svg></span>
+          Dishwasher
+        </button>
+        <button type="button" class="app-card" data-appliance="Oven / Stove / Cooktop">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16"/><circle cx="8" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="16" cy="6" r="1"/><rect x="8" y="12" width="8" height="6" rx="1"/></svg></span>
+          Oven / Stove
+        </button>
+        <button type="button" class="app-card" data-appliance="Washing machine">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2"/><circle cx="12" cy="14" r="4.2"/><path d="M9.5 14a2.5 2.5 0 0 1 5 0"/><circle cx="7.5" cy="6" r=".6" fill="currentColor"/><circle cx="10" cy="6" r=".6" fill="currentColor"/></svg></span>
+          Washing machine
+        </button>
+        <button type="button" class="app-card" data-appliance="Dryer">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2"/><circle cx="12" cy="14" r="4.2"/><path d="M10 12.5c1.5.6 2.5 1.6 1 3M13.5 12.4c-1.4.7-2.3 1.7-.8 3.1"/><circle cx="7.5" cy="6" r=".6" fill="currentColor"/><circle cx="10" cy="6" r=".6" fill="currentColor"/></svg></span>
+          Dryer
+        </button>
+        <button type="button" class="app-card" data-appliance="Fridge">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M5 10h14"/><path d="M8.5 5.5v2M8.5 12.5v3"/></svg></span>
+          Fridge
+        </button>
+        <button type="button" class="app-card" data-appliance="Something else">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.5 1.5c0 1.7-2.5 2-2.5 3.5"/><circle cx="12" cy="17.5" r=".7" fill="currentColor"/></svg></span>
+          Something else
+        </button>
+      </div>
+      <div class="picker-foot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        Rangehoods &amp; more covered too — just pick "Something else".
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span>Scroll</div>
+</section>
+
+<!-- =================== MARQUEE =================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01z"/></svg>5.0 Airtasker rating</span>
+    <span class="marquee-item"><span class="sep">◆</span>Dishwashers</span>
+    <span class="marquee-item"><span class="sep">◆</span>Ovens &amp; Cooktops</span>
+    <span class="marquee-item"><span class="sep">◆</span>Washing Machines</span>
+    <span class="marquee-item"><span class="sep">◆</span>Dryers</span>
+    <span class="marquee-item"><span class="sep">◆</span>Fridges</span>
+    <span class="marquee-item"><span class="sep">◆</span>Rangehoods</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Fully insured</span>
+    <span class="marquee-item"><span class="sep">◆</span>Same-week service</span>
+  </div>
+</div>
+
+<!-- =================== STATS =================== -->
+<section class="stats" aria-label="By the numbers">
+  <div class="wrap stats-grid">
+    <div class="stat reveal"><div class="big"><span data-count="5" data-decimals="1">5.0</span></div><div class="stars" aria-hidden="true">★★★★★</div><div class="lbl">Airtasker rating</div></div>
+    <div class="stat reveal" data-delay="1"><div class="big"><span data-count="200">200</span><span class="suffix">+</span></div><div class="lbl">Jobs completed</div></div>
+    <div class="stat reveal" data-delay="2"><div class="big"><span data-count="7" >7</span><span class="suffix">+ yrs</span></div><div class="lbl">On the tools</div></div>
+    <div class="stat reveal" data-delay="3"><div class="big"><span data-count="100">100</span><span class="suffix">%</span></div><div class="lbl">Insured &amp; guaranteed</div></div>
+  </div>
+</section>
+
+<!-- =================== SERVICES =================== -->
+<section class="services" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="svc-banner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> One call for the whole house</span>
+      <h2 id="svc-h">Repairs, servicing, deep-cleans &amp; installs</h2>
+      <p class="lead center">From a dishwasher that won't drain to a brand-new oven that needs fitting — all handled by the one trusted tradie.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="svc-media"><div class="ph zoomwrap" data-ph="svcRepair"><img alt="Appliance repair in progress" loading="lazy" src="images/service-repairs.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+        </div>
+        <div class="svc-body"><h3>Repairs</h3><p>Won't start, won't drain, leaking, error codes, no heat or odd noises — diagnosed and fixed properly.</p><div class="tags"><span>Diagnostics</span><span>Genuine parts</span><span>Guaranteed</span></div></div>
+      </article>
+
+      <article class="svc-card reveal" data-delay="1">
+        <div class="svc-media"><div class="ph zoomwrap" data-ph="svcService"><img alt="Servicing an appliance" loading="lazy" src="images/service-servicing.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.5-2.4 1a7 7 0 0 0-1.7-1L14.5 3h-4l-.3 2.5a7 7 0 0 0-1.7 1l-2.4-1-2 3.5 2 1.5a7 7 0 0 0 0 2l-2 1.5 2 3.5 2.4-1a7 7 0 0 0 1.7 1l.3 2.5h4l.3-2.5a7 7 0 0 0 1.7-1l2.4 1 2-3.5-2-1.5a7 7 0 0 0 .1-1z"/></svg></span></div>
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+        </div>
+        <div class="svc-body"><h3>Servicing</h3><p>Keep things running and dodge the big breakdown — checks, tune-ups and preventative maintenance.</p><div class="tags"><span>Tune-ups</span><span>Safety checks</span><span>Longer life</span></div></div>
+      </article>
+
+      <article class="svc-card reveal" data-delay="2">
+        <div class="svc-media"><div class="ph zoomwrap" data-ph="svcClean"><img alt="Deep cleaning an appliance" loading="lazy" src="images/service-cleaning.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 3.5l1 1a2 2 0 0 1 0 2.8L9 19l-4 1 1-4L17.7 4.5a2 2 0 0 1 1.8-1z"/></svg></span></div>
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l3-3"/><path d="M19.5 3.5l1 1a2 2 0 0 1 0 2.8L9 19l-4 1 1-4L17.7 4.5a2 2 0 0 1 1.8-1z"/><path d="M16 6l2 2"/></svg></span>
+        </div>
+        <div class="svc-body"><h3>Deep cleaning</h3><p>Built-up grime, smells and mould gone. Oven, dishwasher and washer deep-cleans back to fresh.</p><div class="tags"><span>Ovens</span><span>Washers</span><span>Hygienic</span></div></div>
+      </article>
+
+      <article class="svc-card reveal" data-delay="3">
+        <div class="svc-media"><div class="ph zoomwrap" data-ph="svcInstall"><img alt="Installing a new appliance" loading="lazy" src="images/service-installs.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8M5 12l7-7 7 7"/><rect x="3" y="2" width="18" height="4" rx="1"/></svg></span></div>
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="M5 12l7-7 7 7"/><path d="M5 19h14"/><rect x="3" y="2" width="18" height="4" rx="1"/></svg></span>
+        </div>
+        <div class="svc-body"><h3>Installations</h3><p>New appliance? Fitted, levelled, connected and tested — and the old one taken away tidy.</p><div class="tags"><span>Connect</span><span>Test</span><span>Old unit removed</span></div></div>
+      </article>
+    </div>
+
+    <div class="svc-foot reveal">
+      <p><strong style="color:var(--ink-900)">Covering:</strong> dishwashers · ovens, stoves &amp; cooktops · washing machines · dryers · fridges · rangehoods.</p>
+      <a class="btn btn-teal btn-lg" href="#booking"><span class="shine"></span>Tell us what's going on →</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== BRANDS =================== -->
+<section class="brands" id="brands" aria-labelledby="brands-h">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Brands we repair</span>
+      <h2 id="brands-h">If it's a major brand, we've fixed one</h2>
+      <p class="lead center">We service and repair every major kitchen &amp; laundry brand sold in Australia — from premium European to everyday favourites.</p>
+    </div>
+    <div class="brand-grid">
+      <div class="brand-chip reveal">Samsung</div>
+      <div class="brand-chip reveal" data-delay="1">Bosch</div>
+      <div class="brand-chip reveal" data-delay="2">Fisher&nbsp;&amp;&nbsp;Paykel</div>
+      <div class="brand-chip reveal" data-delay="3">LG</div>
+      <div class="brand-chip reveal">Miele</div>
+      <div class="brand-chip reveal" data-delay="1">Westinghouse</div>
+      <div class="brand-chip reveal" data-delay="2">Electrolux</div>
+      <div class="brand-chip reveal" data-delay="3">Smeg</div>
+      <div class="brand-chip reveal">Whirlpool</div>
+      <div class="brand-chip reveal" data-delay="1">Beko</div>
+      <div class="brand-chip reveal" data-delay="2">ASKO</div>
+      <div class="brand-chip reveal more" data-delay="3">+ many more</div>
+    </div>
+    <p class="brand-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Don't see your brand? We almost certainly still cover it — <a href="#booking">just ask</a>.
+    </p>
+  </div>
+</section>
+
+<!-- =================== FEATURE =================== -->
+<section class="feature" aria-labelledby="feat-h">
+  <div class="wrap feature-grid">
+    <div class="feature-media reveal r-left">
+      <div class="ph zoomwrap" data-ph="feature" data-zoom="1"><img alt="A tidy, modern kitchen with appliances cared for" loading="lazy" src="images/tradie.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span></div>
+      <div class="feature-float">
+        <span class="fico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><strong>On time, every time</strong><span>Arrival windows you can actually plan around</span></div>
+      </div>
+    </div>
+    <div class="reveal r-right" data-delay="1">
+      <span class="eyebrow">Someone you'd trust in your home</span>
+      <h2 id="feat-h">A real local tradie — not a faceless call centre</h2>
+      <p class="lead">You deal with the same person from first message to final test. Calm, careful and clear about cost, so there are no surprises and no mess left behind.</p>
+      <ul class="feature-list">
+        <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>Honest, upfront pricing</h4><p>You'll know the price before any work starts — full stop.</p></div></li>
+        <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>Respectful of your home</h4><p>Drop sheets down, shoes off, everything left clean.</p></div></li>
+        <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>Backed by a guarantee</h4><p>Fully insured, with workmanship you can rely on.</p></div></li>
+      </ul>
+      <div style="margin-top:1.8rem"><a class="btn btn-primary btn-lg" href="#booking"><span class="shine"></span>Book your visit</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== HOW IT WORKS =================== -->
+<section class="how" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Easy from here</span>
+      <h2 id="how-h">Booked and fixed in three simple steps</h2>
+      <p class="lead center">No runaround. Just a clear plan and a tradie who turns up.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Tell us what's happening</h3><p>Pick your appliance and describe the problem in your own words — a quick note is plenty. Photos welcome.</p></div>
+      <div class="step reveal" data-delay="1"><div class="n">2</div><h3>Pick a time that suits</h3><p>Choose a day and morning or afternoon. We'll text back to confirm an arrival window and an upfront price.</p></div>
+      <div class="step reveal" data-delay="2"><div class="n">3</div><h3>We turn up &amp; fix it</h3><p>On time, clean and respectful of your home. Done right, tested, and backed by our guarantee.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROJECTS =================== -->
+<section class="projects" id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Recent work</span>
+      <h2 id="proj-h">A few jobs from around the neighbourhood</h2>
+      <p class="lead center">Real fixes, real homes — from quick repairs to full installs.</p>
+    </div>
+    <div class="proj-grid">
+      <a class="proj reveal" href="#booking" aria-label="Dishwasher repair in Brunswick — book a similar job">
+        <div class="ph zoomwrap" data-ph="proj1"><img alt="Dishwasher repair" loading="lazy" src="images/work-dishwasher.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="3" width="14" height="18" rx="2"/></svg></span></div>
+        <span class="cap"><span class="tag">Brunswick</span><span class="ttl">Dishwasher drain fixed</span></span>
+      </a>
+      <a class="proj reveal" data-delay="1" href="#booking" aria-label="Washing machine repair in Footscray — book a similar job">
+        <div class="ph zoomwrap" data-ph="proj2"><img alt="Washing machine repair" loading="lazy" src="images/work-washing-machine.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="13" r="4"/></svg></span></div>
+        <span class="cap"><span class="tag">Footscray</span><span class="ttl">Washer leak repaired</span></span>
+      </a>
+      <a class="proj reveal" data-delay="2" href="#booking" aria-label="Oven repair in Coburg — book a similar job">
+        <div class="ph zoomwrap" data-ph="proj3"><img alt="Oven repair" loading="lazy" src="images/work-oven.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="11" width="8" height="6"/></svg></span></div>
+        <span class="cap"><span class="tag">Coburg</span><span class="ttl">Oven element replaced</span></span>
+      </a>
+      <a class="proj reveal" data-delay="3" href="#booking" aria-label="Appliance install in Yarraville — book a similar job">
+        <div class="ph zoomwrap" data-ph="proj4"><img alt="New appliance install" loading="lazy" src="images/work-dryer.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21V8M6 12l6-6 6 6"/></svg></span></div>
+        <span class="cap"><span class="tag">Yarraville</span><span class="ttl">New dryer installed</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== REVIEWS =================== -->
+<section class="reviews" id="reviews" aria-labelledby="rev-h">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Real local feedback</span>
+      <h2 id="rev-h">Neighbours who'd have him back</h2>
+      <p class="lead center" style="margin-bottom:18px">Every review below is from a verified, completed Airtasker job.</p>
+      <a class="airt-badge" data-airtasker href="#" target="_blank" rel="noopener"><span class="dot" aria-hidden="true">at</span>Verified on Airtasker <span class="stars" aria-hidden="true">★</span> 5.0</a>
+    </div>
+    <div class="rev-grid">
+      <article class="rev-card reveal">
+        <div class="rev-top"><span class="rev-av" style="background:linear-gradient(150deg,#12767f,#0a4348)" aria-hidden="true">S</span><div><div class="rev-name">Sarah</div><div class="rev-meta">Brunswick · Dishwasher repair</div></div></div>
+        <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <span class="rev-job">Dishwasher won't drain</span>
+        <p class="rev-quote">Came the next day, found the blockage in ten minutes and showed me how to avoid it again. Tidy, friendly and fairly priced. Couldn't recommend more highly.</p>
+        <div class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Verified job</div>
+      </article>
+      <article class="rev-card reveal" data-delay="1">
+        <div class="rev-top"><span class="rev-av" style="background:linear-gradient(150deg,#cf7232,#b15a26)" aria-hidden="true">D</span><div><div class="rev-name">Daniel</div><div class="rev-meta">Footscray · Oven repair</div></div></div>
+        <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <span class="rev-job">Oven died before guests</span>
+        <p class="rev-quote">Our oven packed it in the morning of a dinner party. He squeezed us in, replaced the element and had it humming by 4pm. An absolute lifesaver — honest about the cost the whole way.</p>
+        <div class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Verified job</div>
+      </article>
+      <article class="rev-card reveal" data-delay="2">
+        <div class="rev-top"><span class="rev-av" style="background:linear-gradient(150deg,#1c919b,#0d5c63)" aria-hidden="true">P</span><div><div class="rev-name">Priya</div><div class="rev-meta">Coburg · Washing machine</div></div></div>
+        <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <span class="rev-job">Leaking washer + install</span>
+        <p class="rev-quote">Fixed our leaking washing machine and installed the new dryer while he was here. Explained everything in plain English, no jargon, no upselling. Genuinely lovely to have in the house.</p>
+        <div class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Verified job</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SERVICE AREA =================== -->
+<section class="area" id="area" aria-labelledby="area-h">
+  <div class="wrap area-grid">
+    <div class="reveal r-left">
+      <span class="eyebrow dark-eyebrow">Where we work</span>
+      <h2 id="area-h">Looking after Melbourne's inner north &amp; west</h2>
+      <p class="lead">A genuinely local tradie — which means quicker arrival, less travel fuss, and someone who knows the area.</p>
+      <div class="area-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <p><strong>Not sure if you're covered?</strong> Just ask — we often help in nearby suburbs too. <a href="#booking">Send a quick request</a> or give us a call and we'll let you know straight away.</p>
+      </div>
+    </div>
+    <div class="reveal r-right" data-delay="1">
+      <ul class="suburb-list">
+        <li>Brunswick</li><li>Coburg</li><li>Northcote</li><li>Thornbury</li><li>Preston</li>
+        <li>Fitzroy</li><li>Carlton</li><li>Footscray</li><li>Yarraville</li><li>Seddon</li>
+        <li>Maribyrnong</li><li>Essendon</li><li>Moonee Ponds</li><li>Ascot Vale</li><li>Pascoe Vale</li>
+        <li>Reservoir</li><li>Williamstown</li><li>Newport</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =================== BOOKING =================== -->
+<section class="book" id="booking" aria-labelledby="book-h">
+  <div class="wrap book-grid">
+    <aside class="book-aside reveal r-left">
+      <div class="ph" data-ph="book" aria-hidden="true"><img alt="" loading="lazy" src="images/booking.jpg" onerror="this.closest('.ph').classList.add('ph-fail')" /><span class="ph-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><rect x="4" y="3" width="16" height="18" rx="2"/></svg></span></div>
+      <span class="eyebrow dark-eyebrow">Request a booking</span>
+      <h2 id="book-h">Let's get it sorted</h2>
+      <p class="lead">Tell us what's going on and when suits. It takes a minute — no payment now, and you're not locked in until we confirm.</p>
+      <div class="book-points">
+        <div class="book-point"><span class="bp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h4>We text you back fast</h4><p>Usually within a couple of hours during the day.</p></div></div>
+        <div class="book-point"><span class="bp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><h4>Upfront pricing</h4><p>A clear price before any work starts.</p></div></div>
+        <div class="book-point"><span class="bp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Insured &amp; guaranteed</h4><p>Fully insured, workmanship backed.</p></div></div>
+      </div>
+    </aside>
+
+    <div class="book-card reveal r-right" data-delay="1">
+      <form class="form-body" id="bookingForm" novalidate>
+        <div class="form-row">
+          <div class="field"><label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label><input class="input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required /><div class="form-error">Please pop your name in.</div></div>
+          <div class="field"><label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label><input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" required /><div class="form-error">A mobile we can text you on.</div></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="f-email">Email</label><input class="input" id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" /><div class="form-error">That email doesn't look quite right.</div></div>
+          <div class="field"><label for="f-suburb">Suburb <span class="req" aria-hidden="true">*</span></label><input class="input" id="f-suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="e.g. Brunswick" required /><div class="form-error">Which suburb are you in?</div></div>
+        </div>
+        <div class="field full">
+          <label for="f-appliance">Appliance <span class="req" aria-hidden="true">*</span></label>
+          <div class="select-wrap"><select class="input" id="f-appliance" name="appliance" required>
+            <option value="" disabled selected>Choose an appliance…</option>
+            <option>Dishwasher</option><option>Oven / Stove / Cooktop</option><option>Washing machine</option><option>Dryer</option><option>Fridge</option><option>Rangehood</option><option>Something else</option>
+          </select></div>
+          <div class="form-error">Please choose an appliance.</div>
+        </div>
+        <div class="field full"><label for="f-desc">What's happening with it? <span class="req" aria-hidden="true">*</span></label><textarea class="input" id="f-desc" name="description" placeholder="e.g. The dishwasher fills but won't drain and there's water sitting in the bottom. It's a Bosch, about 4 years old." required></textarea><div class="form-error">A quick note about the problem helps a lot.</div></div>
+        <div class="form-row">
+          <div class="field"><label for="f-date">Preferred date</label><input class="input" id="f-date" name="date" type="date" /></div>
+          <div class="field"><label id="time-label">Preferred time</label>
+            <div class="timechoice" role="radiogroup" aria-labelledby="time-label">
+              <input type="radio" id="t-am" name="time" value="Morning" checked /><label for="t-am"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg> Morning</label>
+              <input type="radio" id="t-pm" name="time" value="Afternoon" /><label for="t-pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a5 5 0 0 0-10 0M12 2v7M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1"/></svg> Afternoon</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block form-submit"><span class="shine"></span>Request my booking</button>
+        <div class="form-reassure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No payment now · your details stay private</div>
+        <p class="cal-note">Prefer to pick an exact slot? Live calendar booking is coming soon.</p>
+      </form>
+      <div class="confirm" id="confirm" role="status" aria-live="polite">
+        <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Request received — nice one!</h3>
+        <p>Thanks <span id="c-name">there</span>. We've got the details and <strong>we'll text you shortly to lock in a time.</strong> No need to do anything else.</p>
+        <div class="summary" id="c-summary" aria-label="Your request summary"></div>
+        <p style="margin-top:18px;font-size:.9rem">Need it urgently? <a data-tel href="tel:+61400000000">Call <span data-tel-display>0400 000 000</span></a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- back to top -->
+<div class="totop-band">
+  <a class="btn btn-light totop" href="#top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    Back to top
+  </a>
+</div>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span><span data-biz-name>ProCare Appliance Services</span><small>Melbourne · Repairs &amp; Service</small></span></div>
+        <p>Honest, insured appliance repairs, servicing, deep cleaning and installation for homes across Melbourne's inner north and west.</p>
+        <span class="foot-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> Fully insured &amp; workmanship guaranteed</span>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a data-tel href="tel:+61400000000"><span data-tel-display>0400 000 000</span></a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <a data-email href="mailto:hello@procareappliances.com.au" data-email-display>hello@procareappliances.com.au</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/></svg> Inner north &amp; west Melbourne</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01z"/></svg> <a data-airtasker href="#" target="_blank" rel="noopener">5.0★ profile on Airtasker</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <ul><li>Mon–Fri · 7:30am – 6:00pm</li><li>Saturday · 8:00am – 4:00pm</li><li>Sunday · Emergencies only</li></ul>
+        <h4 style="margin-top:1.4rem">Business</h4>
+        <ul><li>ABN: 00 000 000 000</li><li>Fully insured</li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> <span data-biz-name>ProCare Appliance Services</span>. All rights reserved.</span>
+      <span>Proudly local · Inner north &amp; west Melbourne</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop-fab" id="toTop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="mobilebar">
+  <a class="btn btn-light call" data-tel href="tel:+61400000000" aria-label="Call now"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+  <a class="btn btn-primary" href="#booking"><span class="shine"></span>Book a service</a>
+</div>
+
+<script>
+/* ===========================================================
+   BUSINESS CONFIG — edit to rebrand everything
+   =========================================================== */
+const CONFIG = {
+  name: "ProCare Appliance Services",
+  phoneDisplay: "0400 000 000",
+  phoneDial: "+61400000000",
+  email: "hello@procareappliances.com.au",
+  airtaskerUrl: "https://www.airtasker.com/",   // <-- paste his profile URL
+};
+
+/* ===========================================================
+   PHOTOS are now set directly in the HTML (each <img src="...">),
+   so they load even if JavaScript is unavailable. To swap a photo,
+   either save your file with the matching name in /images
+   (see images/README.txt) or edit the <img src> in the HTML.
+   The hero photo is the <img> inside <div class="ph" data-ph="hero">.
+   =========================================================== */
+
+/* ---- apply config ---- */
+(function(){
+  document.title = CONFIG.name + " — Appliance Repairs, Service, Cleaning & Installs · Melbourne";
+  document.querySelectorAll("[data-biz-name]").forEach(el => el.textContent = CONFIG.name);
+  document.querySelectorAll("[data-tel]").forEach(el => el.setAttribute("href","tel:"+CONFIG.phoneDial));
+  document.querySelectorAll("[data-tel-display]").forEach(el => el.textContent = CONFIG.phoneDisplay);
+  document.querySelectorAll("[data-email]").forEach(el => el.setAttribute("href","mailto:"+CONFIG.email));
+  document.querySelectorAll("[data-email-display]").forEach(el => el.textContent = CONFIG.email);
+  document.querySelectorAll("[data-airtasker]").forEach(el => el.setAttribute("href",CONFIG.airtaskerUrl));
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- nav: shadow + hide on scroll down ---- */
+(function(){
+  const nav = document.getElementById("nav");
+  let last = 0;
+  const onScroll = () => {
+    const y = window.scrollY;
+    nav.classList.toggle("scrolled", y > 8);
+    if (!reduceMotion){
+      if (y > last && y > 400) nav.classList.add("hide");
+      else nav.classList.remove("hide");
+    }
+    last = y;
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+})();
+
+/* ---- floating back-to-top button ---- */
+(function(){
+  const fab = document.getElementById("toTop");
+  if (!fab) return;
+  fab.addEventListener("click", () => window.scrollTo({top:0, behavior: reduceMotion?"auto":"smooth"}));
+  const toggle = () => fab.classList.toggle("show", window.scrollY > 700);
+  toggle();
+  window.addEventListener("scroll", toggle, {passive:true});
+})();
+
+/* ---- duplicate marquee for seamless loop ---- */
+(function(){
+  const track = document.getElementById("marqueeTrack");
+  if (track && !reduceMotion) track.innerHTML += track.innerHTML;
+})();
+
+/* ---- min date = today ---- */
+(function(){
+  const d = document.getElementById("f-date");
+  const t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
+  d.min = t.toISOString().slice(0,10);
+})();
+
+/* ---- signature appliance picker ---- */
+document.querySelectorAll(".app-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const val = card.dataset.appliance;
+    const select = document.getElementById("f-appliance");
+    const opt = [...select.options].find(o => o.value === val || o.text === val);
+    select.value = opt ? opt.value : "Something else";
+    card.classList.remove("is-pulse"); void card.offsetWidth; card.classList.add("is-pulse");
+    document.getElementById("booking").scrollIntoView({behavior: reduceMotion?"auto":"smooth", block:"start"});
+    setTimeout(() => document.getElementById("f-desc").focus({preventScroll:true}), reduceMotion?0:650);
+  });
+});
+
+/* ---- scroll-driven reveal (robust; no IntersectionObserver dependency) ---- */
+(function(){
+  window.__revealInit = true;
+  const els = [...document.querySelectorAll(".reveal")];
+  if (reduceMotion){ els.forEach(e=>e.classList.add("in")); return; }
+  let ticking = false;
+  function check(){
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    for (const e of els){
+      const r = e.getBoundingClientRect();
+      e.classList.toggle("in", r.top < vh*0.90 && r.bottom > vh*0.06);
+    }
+    ticking = false;
+  }
+  function onScroll(){ if(!ticking){ requestAnimationFrame(check); ticking = true; } }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  window.addEventListener("resize", onScroll, {passive:true});
+  window.addEventListener("load", check);
+  check();
+})();
+
+/* ---- parallax + zoom-on-scroll (both directions) ---- */
+(function(){
+  if (reduceMotion) return;
+  const parallax = [...document.querySelectorAll("[data-parallax]")];
+  const zoomers  = [...document.querySelectorAll(".zoomwrap img")];
+  let ticking = false;
+
+  function update(){
+    const vh = window.innerHeight;
+
+    // hero parallax + gentle zoom-out as you scroll down
+    parallax.forEach(el => {
+      const speed = parseFloat(el.dataset.parallax) || 0.15;
+      const y = window.scrollY * speed;
+      const scale = 1 + Math.min(window.scrollY / vh, 1) * 0.06;
+      el.style.transform = `translate3d(0, ${y}px, 0) scale(${scale})`;
+    });
+
+    // each image zooms 1.0 -> ~1.12 as it travels through the viewport
+    zoomers.forEach(img => {
+      const wrap = img.closest(".zoomwrap");
+      const r = wrap.getBoundingClientRect();
+      if (r.bottom < -80 || r.top > vh + 80) return;        // skip off-screen
+      const center = r.top + r.height/2;
+      const p = 1 - Math.min(Math.abs(center - vh/2) / (vh/2 + r.height/2), 1); // 0..1, 1 at centre
+      const scale = 1.02 + p * 0.10;
+      img.style.transform = `scale(${scale.toFixed(4)})`;
+    });
+    ticking = false;
+  }
+  function onScroll(){ if(!ticking){ requestAnimationFrame(update); ticking = true; } }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  window.addEventListener("resize", onScroll, {passive:true});
+  update();
+})();
+
+/* ---- animated counters ---- */
+(function(){
+  const nums = document.querySelectorAll("[data-count]");
+  if (!("IntersectionObserver" in window)){ nums.forEach(n=>{}); return; }
+  const run = (el) => {
+    const target = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.decimals||"0",10);
+    if (reduceMotion){ el.textContent = target.toFixed(dec); return; }
+    const dur = 1400; const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min((now-start)/dur, 1);
+      const eased = 1 - Math.pow(1-t, 3);
+      el.textContent = (target*eased).toFixed(dec);
+      if (t < 1) requestAnimationFrame(tick); else el.textContent = target.toFixed(dec);
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ run(e.target); io.unobserve(e.target);} });
+  }, {threshold:0.6});
+  nums.forEach(n=>io.observe(n));
+})();
+
+/* ---- subtle tilt on cards (pointer, fine devices only) ---- */
+(function(){
+  if (reduceMotion || !window.matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+  document.querySelectorAll(".svc-card").forEach(card => {
+    card.addEventListener("pointermove", (e) => {
+      const r = card.getBoundingClientRect();
+      const rx = ((e.clientY - r.top)/r.height - .5) * -5;
+      const ry = ((e.clientX - r.left)/r.width - .5) * 5;
+      card.style.transform = `translateY(-6px) perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+  });
+})();
+
+/* ---- form validation + confirmation ---- */
+(function(){
+  const form = document.getElementById("bookingForm");
+  const card = form.closest(".book-card");
+  const setInvalid = (field,bad) => field.classList.toggle("invalid",bad);
+  function validateField(input){
+    const field = input.closest(".field"); if(!field) return true;
+    let bad = false;
+    if (input.hasAttribute("required") && !input.value.trim()) bad = true;
+    if (input.type === "email" && input.value.trim()) bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+    setInvalid(field,bad); return !bad;
+  }
+  form.querySelectorAll("input,select,textarea").forEach(el=>{
+    el.addEventListener("blur",()=>validateField(el));
+    el.addEventListener("input",()=>{ var f=el.closest(".field"); if(f && f.classList.contains("invalid")) validateField(el); });
+  });
+  form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let firstBad=null, ok=true;
+    [...form.querySelectorAll("[required]")].forEach(el=>{ if(!validateField(el)){ ok=false; if(!firstBad)firstBad=el; } });
+    const emailEl=document.getElementById("f-email");
+    if(!validateField(emailEl)){ ok=false; if(!firstBad)firstBad=emailEl; }
+    if(!ok){ if(firstBad){ firstBad.focus(); firstBad.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"center"}); } return; }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    /* ---- hook a real backend / live calendar here:
+       fetch("/api/bookings",{method:"POST",body:JSON.stringify(data)}) ---- */
+    document.getElementById("c-name").textContent = (data.name||"there").split(" ")[0];
+    const niceDate = data.date ? new Date(data.date+"T00:00").toLocaleDateString("en-AU",{weekday:"long",day:"numeric",month:"long"}) : "Flexible";
+    document.getElementById("c-summary").innerHTML = `
+      <div><span>Appliance</span><span>${esc(data.appliance||"—")}</span></div>
+      <div><span>Suburb</span><span>${esc(data.suburb||"—")}</span></div>
+      <div><span>Preferred</span><span>${esc(niceDate)} · ${esc(data.time||"—")}</span></div>
+      <div><span>We'll text</span><span>${esc(data.phone||"—")}</span></div>`;
+    card.classList.add("done");
+    card.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"center"});
+  });
+  function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+})();
+</script>
+</body>
+</html>

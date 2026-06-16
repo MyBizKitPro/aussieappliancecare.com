@@ -1,0 +1,17 @@
+# Netlify config — static site, no build step.
+[build]
+  publish = "."
+
+# Sensible default headers.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Long cache for images (they rarely change; rename the file to bust cache).
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

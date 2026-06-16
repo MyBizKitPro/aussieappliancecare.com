@@ -1,0 +1,11 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Local dev tooling (not needed on the live site)
+.claude/
+
+# Leftovers
+images/_nettest.jpg

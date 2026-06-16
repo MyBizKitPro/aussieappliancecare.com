@@ -10,8 +10,9 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Long cache for images (they rarely change; rename the file to bust cache).
+# Always revalidate images so a swapped photo (same filename) shows up
+# right away instead of being served stale from the browser cache.
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"

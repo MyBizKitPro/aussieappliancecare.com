@@ -443,6 +443,9 @@ select.input{appearance:none;padding-right:2.6em;cursor:pointer;}
 .timechoice input:checked + label svg{color:var(--teal-600);}
 .timechoice input:focus-visible + label{outline:3px solid var(--amber-400);outline-offset:2px;}
 .form-error{color:#b3261e;font-size:.82rem;margin-top:.35em;font-weight:600;display:none;}
+.field-hint{display:none;align-items:center;gap:.5em;margin-top:.5em;font-size:.84rem;font-weight:600;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:10px;padding:.55em .75em;line-height:1.3;}
+.field-hint.show{display:flex;}
+.field-hint svg{width:1.05em;height:1.05em;flex:none;color:var(--copper-500);}
 .field.invalid .input{border-color:#e0827b;background:#fdf3f2;}
 .field.invalid .form-error{display:block;}
 .form-submit{margin-top:6px;}
@@ -704,10 +707,6 @@ html.anim .reveal.in{opacity:1 !important;transform:none !important;}
       <h2 id="brands-h">If it's a major brand, we've fixed one</h2>
       <p class="lead center">We service and repair every major kitchen &amp; laundry brand sold in Australia — from premium European to everyday favourites.</p>
     </div>
-    <p class="brand-note reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      Don't see your brand? We almost certainly still cover it — <a href="#booking">just ask</a>.
-    </p>
   </div>
 </section>
 
@@ -881,6 +880,7 @@ html.anim .reveal.in{opacity:1 !important;transform:none !important;}
             <option value="" selected>Brand (optional)…</option>
             <option>Bosch</option><option>Fisher &amp; Paykel</option><option>LG</option><option>Samsung</option><option>Miele</option><option>Westinghouse</option><option>Electrolux</option><option>Simpson</option><option>Haier</option><option>Beko</option><option>Whirlpool</option><option>Asko</option><option>Smeg</option><option>Euromaid</option><option>Other / Not sure</option>
           </select></div>
+          <p class="field-hint" id="brand-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> No worries — just pop the brand (or that you're not sure) in the box below.</p>
         </div>
         <div class="field full"><label for="f-desc">What's happening with it? <span class="req" aria-hidden="true">*</span></label><textarea class="input" id="f-desc" name="description" placeholder="e.g. The dishwasher fills but won't drain and there's water sitting in the bottom. It's a Bosch, about 4 years old." required></textarea><div class="form-error">A quick note about the problem helps a lot.</div></div>
         <div class="form-row">
@@ -1044,6 +1044,16 @@ document.querySelectorAll(".app-card").forEach(card => {
     setTimeout(() => document.getElementById("f-desc").focus({preventScroll:true}), reduceMotion?0:650);
   });
 });
+
+/* ---- brand "Other / Not sure" hint ---- */
+(function(){
+  var brand = document.getElementById("f-brand");
+  var hint = document.getElementById("brand-hint");
+  if (!brand || !hint) return;
+  brand.addEventListener("change", function(){
+    hint.classList.toggle("show", brand.value === "Other / Not sure");
+  });
+})();
 
 /* ---- scroll-driven reveal (robust; no IntersectionObserver dependency) ---- */
 (function(){

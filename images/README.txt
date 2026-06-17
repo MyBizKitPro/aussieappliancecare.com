@@ -16,9 +16,10 @@ tradie.jpg                     "Real local tradie" section    1100 x 1320      P
 service-repairs.jpg            Services card: Repairs          900 x 700        Landscape
 service-servicing.jpg          Services card: Servicing        900 x 700        Landscape
 service-installs.jpg           Services card: Installations    900 x 700        Landscape
-work-dishwasher.jpg            Recent work gallery #1          700 x 930        Portrait (tall)
+service-cleaning.jpg           Services card: Cleaning         900 x 700        Landscape  (NOT YET ADDED — placeholder shows until a photo is dropped in)
+work-dishwasher.jpg            Recent work gallery #1 & #3     700 x 930        Portrait (tall)
 work-washing-machine.jpg       Recent work gallery #2          700 x 930        Portrait (tall)
-work-oven.jpg                  Recent work gallery #3          700 x 930        Portrait (tall)
+work-oven.jpg                  (no longer used — oven/fridge dropped from site; safe to ignore)
 work-dryer.jpg                 Recent work gallery #4          700 x 930        Portrait (tall)
 booking.jpg                    Background behind booking form  1100 x 1320      Portrait (tall)
 

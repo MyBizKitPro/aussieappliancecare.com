@@ -1,6 +1,8 @@
 # Netlify config — static site, no build step.
+# (Netlify still auto-installs package.json deps and bundles the function below.)
 [build]
   publish = "."
+  functions = "netlify/functions"
 
 # Sensible default headers.
 [[headers]]

@@ -1,0 +1,10 @@
+{
+  "name": "procare-appliance-services",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pro-Care Appliance Services — booking site + Netlify Forms acknowledgement autoresponder",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}
